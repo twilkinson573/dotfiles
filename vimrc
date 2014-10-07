@@ -84,8 +84,9 @@ set background=dark
 colorscheme railscasts
 
 "" Highlight -----------------------------------------------------------------
+
 hi OverLength ctermbg=red ctermfg=black guibg=grey
-au BufNewFile,BufReadPost * match OverLength /\%79v.\+/
+au BufNewFile,BufReadPost * match OverLength /\%80v.\+/
 
 set number
 
