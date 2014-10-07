@@ -1,50 +1,54 @@
 "" Vundle Setup
 set nocompatible                " choose no compatibility with legacy vi
-filetype off                    " required by Vindle
+filetype off                    " required by Vundle
 set shell=/bin/zsh
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()             " required by Vundle
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " Langauges
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-git'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
-Bundle 'taq/vim-rspec'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'avakhov/vim-yaml'
-" Bundle 'vim-scripts/VimClojure'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-classpath'
-Bundle 'guns/vim-clojure-static'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-git'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-rails'
+Plugin 'taq/vim-rspec'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'avakhov/vim-yaml'
+" Plugin 'vim-scripts/VimClojure'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-classpath'
+Plugin 'guns/vim-clojure-static'
 
 " Tools
-" Bundle 'wincent/Command-T'
-Bundle 'kien/ctrlp.vim'
-Bundle 'JazzCore/ctrlp-cmatcher'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-surround'
-Bundle 'bling/vim-airline'
-Bundle 'sickill/vim-pasta'
-Bundle 'rosenfeld/conque-term'
-Bundle 'mbbill/undotree'
+" Plugin 'wincent/Command-T'
+Plugin 'kien/ctrlp.vim'
+Plugin 'JazzCore/ctrlp-cmatcher'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'bling/vim-airline'
+Plugin 'sickill/vim-pasta'
+Plugin 'rosenfeld/conque-term'
+Plugin 'mbbill/undotree'
 
 " Colours
-Bundle 'wgibbs/vim-irblack'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'chriskempson/base16-vim'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'kien/rainbow_parentheses.vim'
+Plugin 'wgibbs/vim-irblack'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'chankaward/vim-railscasts-theme'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 syntax enable
 set encoding=utf-8
@@ -77,10 +81,11 @@ set smartcase                   " ... unless they contain at least one capital
 set ruler                       " line and column number.
 set list                        " show invisble characters.
 set background=dark
-" colorscheme jellybeans
-colorscheme base16-default
+colorscheme railscasts
 
-set cc=81                       " show right margin at 80 characters.
+"" Highlight -----------------------------------------------------------------
+hi OverLength ctermbg=red ctermfg=black guibg=grey
+au BufNewFile,BufReadPost * match OverLength /\%79v.\+/
 
 set number
 
